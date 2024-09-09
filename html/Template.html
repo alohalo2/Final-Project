@@ -14,10 +14,42 @@
                 <img src="../images/logo.svg" alt="navbar_logo">
             </div>
             <ul class="navbar_menu">
-                <li><a href="#">특수경매</a></li>
-                <li><a href="#">일반경매</a></li>
-                <li><a href="#">물품등록</a></li>
-                <li><a href="#">마이페이지</a></li>
+                <li class="navbar_menu_item"><a href="#">특수경매</a></li>
+                <div class="navbar_menu_detail">
+                    <ul>
+                        <li><a href="#">실시간</a></li>
+                        <li><a href="#">블라인드</a></li>
+                    </ul>
+                </div>
+                <li class="navbar_menu_item"><a href="#">일반경매</a></li>
+                <div class="navbar_menu_detail" style="display: none; height: auto; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <ul>
+                        <li><a href="#">전체보기</a></li>
+                        <li>카테고리</li>
+                        <div class="navbar_menu_detail_category">
+                            <ul>
+                                <li><a href="#">의류/잡화</a></li>
+                                <li><a href="#">취미/수집</a></li>
+                                <li><a href="#">도서</a></li>
+                                <li><a href="#">예술품</a></li>
+                                <li><a href="#">전자제품</a></li>
+                                <li><a href="#">사진</a></li>
+                                <li><a href="#">골동품</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                <li class="navbar_menu_item"><a href="#">물품등록</a></li>
+                <li class="navbar_menu_item"><a href="#">마이페이지</a></li>
+                <div class="navbar_menu_detail">
+                    <ul>
+                        <li><a href="#">구매내역</a></li>
+                        <li><a href="#">판매내역</a></li>
+                        <li><a href="#">알림내역</a></li>
+                        <li><a href="#">페이충전</a></li>
+                        <li><a href="#">회원정보수정</a></li>
+                    </ul>
+                </div>
             </ul>
             <div class="navbar_searchbar">
                 <input type="text">
@@ -31,7 +63,7 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main id="wrapper">
 
     </main>
     <footer>
@@ -53,13 +85,15 @@
                         <P>고객센터</P>
                     </div>
                     <div class="footer_contents_body_content_detail">
-                        <p>상호명: 원티트</p>
+                        <p>상호명: 원티드</p>
                         <div class="contour"></div>
                         <p>주소: 서울특별시 강남구 819 3 삼오빌딩 5-8층</p>
                         <p>Tel: 010-1234-5678</p>
                         <div class="contour"></div>
                         <p>E-mail: bitcamp502@bitcamp.com</p>
-                        <p>Kee Jusung</p>
+                    </div>
+                    <div class="footer_contents_body_content_member">
+                        <p>Lee Jusung</p>
                         <div class="contour"></div>
                     </div>
                 </div>
@@ -70,10 +104,10 @@
         </div>
         <div class="footer_contour"></div>
         <div class="footer_icons">
-            <img src="../images/instagram_icon.svg" alt="instagram">
-            <img id="facebook_icon" src="../images/facebook_icon.svg" alt="facebook">
-            <img src="../images/tiwtter_icon.svg" alt="twitter">
-            <img src="../images/pinterest_icon.svg" alt="pinterest">
+            <a href="#"><img src="../images/instagram_icon.svg" alt="instagram"></a> 
+            <a href="#"><img id="facebook_icon" src="../images/facebook_icon.svg" alt="facebook"></a>
+            <a href="#"><img src="../images/tiwtter_icon.svg" alt="twitter"></a>
+            <a href="#"><img src="../images/pinterest_icon.svg" alt="pinterest"></a>
         </div>
 
     </footer>
