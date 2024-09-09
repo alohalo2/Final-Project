@@ -1,0 +1,141 @@
+.body{
+    width: 100%;
+    height: auto;
+}
+
+
+/*-----------------header_navbar-----------------*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    border-bottom: 2px solid #BFBFBF;
+}
+
+.navbar_logo {
+    flex-grow: 0.1;
+}
+
+.navbar_menu {
+    display: flex;
+    padding: 0;
+    flex-grow: 2.5;
+    justify-content: space-evenly;
+}
+
+
+.navbar_menu li {
+    list-style: none;
+}
+
+.navbar_menu li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar_searchbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar_searchbar input {
+    width: 300px;
+    height: 40px;
+    padding-left: 40px;
+    background-image: url('../images/search_icon.svg');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: 2px solid #BFBFBF;
+    outline: none;
+}
+
+.navbar_member {
+    display: flex;
+    padding: 0;
+    flex-grow: 1.5;
+    justify-content: space-evenly;
+}
+
+.navbar_member li {
+    list-style: none;
+}
+
+.navbar_member li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar_alarm {
+    display: flex;
+    justify-content: center;
+    flex-grow: 0.1;
+}
+
+.navbar_alarm img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*--------------------footer--------------------*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000;
+    opacity: 70%;
+    padding: 2rem;
+}
+
+footer p {
+    color: white;
+}
+
+.footer_contents {
+    flex-grow: 9;
+}
+
+.footer_contents_body {
+    display: flex;
+    align-items: center;
+}
+
+#footer_logo {
+    margin-right: 3rem;
+}
+
+.footer_icons {
+    flex-grow: 1;
+}
+
+.footer_contents_bttm {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_contour {
+    border: 2px solid white;
+    height: 24rem;
+    margin: 3rem;
+}
+
+.footer_icons {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    gap: 20px;
+}
+
+#facebook_icon{
+    margin: 0.3rem;
+}
