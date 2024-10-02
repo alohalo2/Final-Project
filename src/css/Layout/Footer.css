@@ -1,0 +1,89 @@
+body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+footer {
+    /* max-width: 1200px; */
+    width: 100%;
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    opacity: 85%;
+    margin: auto;
+    position : relative;
+    box-sizing: border-box;
+    white-space: nowrap;
+    /* transform : translateY(-100%); */
+}
+
+footer p {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.FTcontentsBody {
+    display: flex;
+    align-items: center;
+}
+
+#FTlogo {
+    margin-right: 4rem;
+}
+
+.FTcontentsBttm {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.FTcontentsBttm p {
+    margin: 0;
+}
+
+.FTmainContour {
+    border-left: 4px solid white;
+    height: 14rem;
+    margin-left: 5.5rem;
+    margin-right: 5.5rem;
+}
+
+.FTcontentsBodyContentMenu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.FTcontour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid white;
+    height: 0.9rem;
+    margin: 1.2rem;
+}
+
+.FTcontentsBodyContentDetail {
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr;
+}
+
+.FTcontentsBodyContentMember {
+    display: flex;
+    align-items: center;
+}
+
+.FTicons {
+    display: grid;
+    grid-template-columns: repeat(2, 0.1fr);
+    gap: 40px;
+}
+
+#FTfacebookIcon {
+    margin: 0.3rem;
+}

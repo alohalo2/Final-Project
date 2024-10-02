@@ -1,0 +1,114 @@
+@media screen and (max-width: 768px) {
+    
+    .navbar {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+        margin-bottom: 1rem;
+    }
+    .navbar_member {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .navbar_searchbar {
+        display: none;
+    }
+
+    .navbar_alarm {
+        display: none;
+    }
+
+    .navbar_toggleBtn {
+        display: block;
+        margin: auto;
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar_menu.active,
+    .navbar_member.active {
+        display: flex;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contour {
+        display: none;
+    }
+
+    footer {
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        padding: 8px 12px;
+    }
+
+    footer p {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .footer_contents_body_content {
+        display: flex;
+    }
+
+    .footer_contents_body_content_menu {
+        flex-direction: column;
+        align-items: start;
+        margin-right: 3rem;
+    }
+
+    .footer_contents_body_content_detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_contents_body_content_member {
+        display: none;
+    }
+
+    .footer_contents_body_logo {
+        display: none;
+    }
+
+    .footer_contour {
+        display: none;
+    }
+
+    .footer_icons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .navbar_menu li a {
+        white-space: wrap;
+        font-size: 14px;
+    }
+
+    .navbar_member li a {
+        white-space: wrap;
+        font-size: 14px;
+    }
+
+    .navbar_searchbar input {
+        transform: scale(0.8);
+        width: 10rem;
+    }
+}

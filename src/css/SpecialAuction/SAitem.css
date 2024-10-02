@@ -1,0 +1,780 @@
+.SAauctionList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .SAauctionItem {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    /*텍스트에서 \n을 사용한 줄바꿈이 의도한 대로 출력됩니다. 
+    * white-space: pre-line 속성은 공백과 줄바꿈을 유지하면서 텍스트를 렌더링해 주는 CSS 속성입니다.
+    */
+    white-space: pre-line; 
+  }
+  
+  .SAauctionImage {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+  }
+  
+  .SAauctionDetails {
+    margin-left: 2rem;
+    flex: 1;
+  }
+
+  .SAauctionDetails h3 {
+    font-size: 1.7rem;
+  }
+
+  .SAauctionDetails p {
+    margin-top: 2rem;
+  }
+
+  .SAauctionDetails p strong {
+    font-size: 1.3em;
+    white-space: pre-wrap;
+  }
+
+  .SAsellerAuctionDetailsBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .SAsellerAuctionDetails h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+  }
+  
+  .SAsellerAuctionDetailsBox p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .SAsellerAuctionContentsTitle {
+    margin-right: 5rem;
+  }
+
+  #SAsellerAuctionStartRemainTimeDiff{
+    margin-bottom: 0;
+    font-size: 22px;
+    color: red;
+  }
+
+  #SAsellerAuctionStartRemainTime{
+    margin-top: 0;
+    font-size: 16px;
+    color: #7A7A7A;
+  }
+
+  .SAsellerSteamingBox {
+    width: 55vw;
+    height: 70vh;
+    border-radius: 8px;
+    background-color: #444444;
+  }
+
+  .SAsellerStreamingInfo p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #SAsellerStreamingNote {
+    font-size: 18px;
+    font-weight: bolder;
+    color: red;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #SAsellerStreamingNoteContent {
+    margin-top: 0;
+  }
+
+  .SAauctionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2.2rem;
+    margin-right: 2rem;
+  }
+  
+  .SAgoButton, .SAalertButton {
+    width: 150px;
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .SAgoButton:hover, .SAalertButton:hover {
+    color: white;
+    background-color: #0A369D;
+  }
+  
+  .SAalertButton {
+    background-color: #ccc;
+  }
+  
+  .SAalertText {
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  /* --------------- 판매자, 구매자 선택 팝업 & 오버레이 배경 ---------------*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 투명한 검은 배경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* 위로 띄우기 */
+}
+
+.SAtotalPopup {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+/* 팝업 박스 */
+.popup {
+  background: #222222;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+  position: relative;
+}
+
+.popup h2 {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.popup h3 {
+  font-size: 23px;
+  margin-bottom: 0;
+}
+
+.popup p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* 팝업 버튼들 */
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.seller-button,
+.buyer-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0 10px;
+  line-height: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.seller-button:hover,
+.buyer-button:hover {
+  background-color: #0A369D;
+}
+
+.seller-button {
+  background-color: #4C4C4C;
+  color: white;
+}
+
+.buyer-button {
+  background-color: #4C4C4C;
+  color: white;
+}
+
+/* 닫기 버튼 */
+.close-button {
+  position: absolute;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 5px;
+  top: -4rem;
+  right: -0.3rem;
+}
+
+/* 닫기 버튼 */
+.SAtotalBoxCloseButton {
+  position: absolute;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 5px;
+  top: -4.5rem;
+  right: 9.5rem;
+}
+
+.close-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* 대기 페이지 팝업 박스 */
+.SAwaitPopup {
+  position: relative;
+  background: #333; /* 어두운 배경 */
+  color: white; /* 흰색 텍스트 */
+  padding: 30px;
+  border-radius: 10px;
+  height: 80vh;
+  width: 80%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 구매자 페이지 팝업 박스 */
+.SAbuyerPopup {
+  position: relative;
+  background: #222222; /* 어두운 배경 */
+  color: white; /* 흰색 텍스트 */
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  height: 85vh;
+  width: 80%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* .SAbuyerPopup::-webkit-scrollbar{
+  display:none;
+} */
+
+/* 팝업 내부 텍스트 */
+.SAbuyerPopup h2 {
+  font-size: 2em;
+}
+
+.SAbuyerPopup p {
+  margin: 20px 0;
+}
+
+.SAliveOnOffBox {
+    width: 5%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A369D;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.SAbuyerWaitCommnetBox {
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.SAbuyerWaitCommnetBox h1 {
+  font-size: 52px;
+  margin-bottom: 10rem;
+}
+
+.SAbuyerWaitCommnetBox p {
+  font-size: 42px;
+  margin-bottom: 1.2rem;
+}
+
+.SAliveAuctionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SAliveAuctionHeader h3 {
+  margin: 0;
+  background-color: #0A369D;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.SAsellerLiveAuctionHeader {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.SAsellerLiveAuctionHeader h1 {
+  margin: 2rem auto;
+}
+
+.SAsellerLiveAuctionHeader h3 {
+  margin: 0;
+  background-color: #0A369D;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.SAviewerCount {
+  display: flex;
+  justify-content: center;
+  background-color: #7A7A7A;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.SAviewerCount p {
+  margin: 0;
+}
+
+.SAviewerCount img {
+ margin-right: 0.5rem;
+}
+
+.SAviewerCount p {
+  font-size: 20px;
+ }
+
+.SAauctionContainer {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+}
+
+.SAauctionContainer::-webkit-scrollbar{
+  display:none;
+}
+
+.SAauctionContentBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.SAsellerAuctionContentBox {
+  display: flex;
+}
+
+ .SAproductSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+ }
+
+ .SAproductSection h2 {
+  text-align: center;
+ }
+
+ .SAsellerProductSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+ }
+
+ .SAsellerProductSection h2 {
+  text-align: center;
+ }
+
+#SAsoundOffIcon {
+  display: none;
+}
+
+#SAsoundOnIcon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#SAmikeOffIcon {
+  display: none;
+}
+
+#SAmikeOnIcon {
+  position: absolute;
+  bottom: 30px;
+  right: 45px;
+}
+
+.SAsellerTotalBox {
+  width: 55vw;
+  display: flex;
+}
+
+.SAproductImage {
+  width: 110vh;
+  height: 72vh;
+}
+
+.SAsellerProductImage {
+  width: 52vh;
+  height: 32vh;
+  margin-right: 2rem;
+}
+
+.SAproductInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SAsellerProfile h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.SAsellerProfile p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7A7A7A;
+}
+
+.SAsellerProfile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.SAsellerMainInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.SAsellerEvaluation {
+  width: 20vw;
+  background-color: #535353;
+  padding: 20px 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.SAsellerEvaluationDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.SAsellerEvaluationDetail progress {
+  margin: 1.36rem;
+}
+
+.SAprogress {
+  appearance: none;
+}
+.SAprogress::-webkit-progress-bar {
+  background:#272727;
+  border-radius:15px;
+}
+.SAprogress::-webkit-progress-value {
+  border-radius:15px;
+  background: #0A369D;
+  background: -webkit-linear-gradient(to right, #2561ee, #0A369D);
+  background: linear-gradient(to right, #2561ee, #0A369D);
+}
+
+.SAmoreInfoButtonBox {
+  display: flex;
+  justify-content: center;
+}
+
+.SAmoreInfoButton {
+  background-color: #535353;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.SAmoreInfoButton:hover {
+  background-color: #0A369D;
+}
+
+.SAauctionInfo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.SAauctionInfoTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.SAauctionInfoTitle h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.SAauctionInfoTitle p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.SAauctionInfoContents h3{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.SAauctionInfoContents p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.SAauctionInfoContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SAremainingTime p, .SAexpectedPurchase p {
+  margin: 0;
+}
+
+#SArealEndTime {
+  font-size: 16px;
+  color: #7A7A7A;
+}
+
+#SAexpectedPurchaseCalc {
+  font-size: 16px;
+  color: #7A7A7A;
+}
+
+#SAbidInput {
+  width: calc(100% - 80px);
+  padding: 5px;
+  background-color: white;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bolder;
+  text-align: right;
+}
+
+.SAbidBox {
+  display: flex;
+  align-items: center;
+}
+
+.SAbidButtonBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.SAbidButton {
+  font-size: 18px;
+  margin: 0 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.SAbidSubmitButtonBox {
+  display: flex;
+  justify-content: center;
+}
+
+.SAbidSubmitButton {
+  background-color: #535353;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.SAbidSubmitButton:hover {
+  background-color: #0A369D;
+}
+
+/*-------------------------------chat section------------------------------*/
+
+.SAchatContainer {
+  position: fixed;
+  left: 75rem;
+  width: 27vw;
+  height: 72vh;
+  background-color: #444444;
+  border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 내용이 아래쪽으로 정렬 */
+}
+
+.SAsellerChatContainer {
+  position: fixed;
+  left: 79rem;
+  width: 24vw;
+  height: 69.7vh;
+  background-color: #444444;
+  border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 내용이 아래쪽으로 정렬 */
+}
+
+.SAchatSection{
+  height: 70vh;
+  flex: 1;
+  overflow-y: auto; /* 스크롤 생성 */
+  -ms-overflow-style: none;
+  position: relative;
+}
+
+.SAchatSection ul{
+  list-style: none;
+  padding: 0;
+}
+
+.SAchatSection li{
+  padding: 0 1rem;
+  padding-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.SAchatSection::-webkit-scrollbar{
+  display:none;
+}
+
+.SAchatInput {
+  width: calc(100% - 25px);
+  margin: 5px;
+  padding: 5px;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 5px;
+  border: none;
+  background-color: white; /* 백그라운드 컬러를 화이트로 유지 */
+  background-image: url('../../../public/images/upload_arrow_icon.svg'); /* 이미지 추가 */
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-position: calc(100% - 5px) center; /* 이미지 위치 설정 (오른쪽 끝에서 안쪽으로 20px 이동) */
+  background-size: 20px; /* 이미지 크기 조정 */
+  padding-right: 10px; /* 텍스트와 이미지 사이 간격 조절 */
+}
+
+.SAendPopup {
+  position: relative;
+  background: #222222; /* 어두운 배경 */
+  color: white; /* 흰색 텍스트 */
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  height: 51vh;
+  width: 40%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.SAendPopup h2 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  border-bottom: 2px solid rgb(83, 83, 83);
+}
+
+.SAendPopup p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#SAsuccessfulBidderName {
+  margin-bottom: 0.2rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#SAsuccessfulBidderPrice {
+  margin-top: 0.2rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#SAendAuctionMent {
+  margin-bottom: 0.5rem;
+}
+
+.SAendOkbttn {
+  background-color: #535353;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  padding: 8px 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.SAendOkbttn:hover {
+  background-color: #0A369D;
+  color: white;
+}

@@ -1,0 +1,50 @@
+.SAtabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -2px;
+}
+
+.SAtabs div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.SAliveAuctionBox,
+.SAblindAuctionBox {
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #dfdfdf;
+    border: 2px solid #ccc;
+    outline: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: background-color 0.3s;
+    margin-right: 3px; 
+    font-size: 1.1rem;
+}
+
+.SAliveAuctionBox.active,
+.SAblindAuctionBox.active {
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+.SAnote {
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.SAauctionTotalBox {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 0 10px 10px 10px;
+    margin-bottom: 1rem;
+}

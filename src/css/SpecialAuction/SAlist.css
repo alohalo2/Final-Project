@@ -1,0 +1,24 @@
+.SAauctionList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto; /* 적절한 높이 설정 */
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .SAnoAuction {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 900; /* 가능한 가장 굵은 값 */
+    color: #000000; /* 메시지 색상 */
+    line-height: 1;
+  }
+
+  .SAnoAuction p {
+    margin: 1rem 0;
+  }
