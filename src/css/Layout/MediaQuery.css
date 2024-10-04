@@ -112,3 +112,116 @@
         width: 10rem;
     }
 }
+
+@media screen and (max-width: 1536px) {
+    .HDnavbarMenuDetailFlex {
+        padding-left: 17rem !important;
+    }
+
+    .HDnavbarMenuDetail {
+        padding-left: 18px;
+    }
+
+    .HDnavbarMenuDetailBox {
+        top: 7.58rem !important;
+    }
+    .HDarrowIcon {
+        left: 32rem !important;
+    }
+
+    .HDnavbarMenuDetailCategory {
+        top: 2.2rem !important;
+    }
+
+    .SAsellerProductImage {
+        width: 58vh;
+        height: 40vh;
+    }
+
+    #SAmikeOnIcon {
+        bottom: 70px;
+    }
+
+    .SAbuyerPopup h2 {
+        font-size: 1.8em;
+    }
+
+    #SAsellerAuctionStartRemainTimeDiff {
+        font-size: 20px;
+    }
+
+    .SAsellerAuctionDetailsBox p {
+        font-size: 16px;
+    }
+
+    #SAsellerStreamingNote {
+        font-size: 16px;
+    }
+
+    .SAsellerStreamingInfo p {
+        font-size: 16px;
+    }
+
+    .SAsellerChatContainer {
+        left: 63.2rem;
+        height: 65vh;
+    }
+
+    .SAtotalBoxCloseButton {
+        right: 7.5rem;
+    }
+
+    .SAchatContainer {
+        left: 59.5rem;
+        height: 68vh;
+    }
+    
+    .SAauctionInfoTitle h3 {
+        font-size: 22px;
+    }
+
+    .SAauctionInfoTitle p {
+        font-size: 18px;
+    }
+
+    #SAbidInput {
+        width: 11rem;
+    }
+
+    .SAsellerEvaluationDetail {
+        font-size: 14px;
+    }
+
+    .SAsellerEvaluationDetail progress {
+        margin: 1.38rem 1rem;
+    }
+    
+    .SAproductInfo {
+        gap: 20px;
+    }
+
+    .SAproductImage {
+        width: 112vh;
+    }
+
+    .SAbuyerWaitCommnetBox h1 {
+        font-size: 48px;
+        margin-bottom: 6rem;
+    }
+
+    .SAbuyerWaitCommnetBox p {
+        font-size: 36px;
+    }
+
+    .SAbuyerWaitCommnetBox {
+        margin-top: 3.5rem;
+    }
+
+    .SAliveOnOffBox {
+        width: 6%;
+    }
+
+    .SAwaitPopup {
+        height: 78vh;
+    }
+}
